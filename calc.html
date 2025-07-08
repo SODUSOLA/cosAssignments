@@ -5,48 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Calculator</title>
     <link rel="stylesheet" href="calc.css">
-
-    <!-- <nav>
-        <div><h1>Web Calculator</h1></div>
-        <div><h1></h1></div>
-    </nav> -->
 </head>
 <body>
     <div class="main-center">
     <div class="calculator">
-    <div id="display" style="display: flex; align-items: flex-end; justify-content: flex-end; height: 100px; padding: 10px; font-size: 2em;">0</div>
+    <div id="display"><span id="display-span">0</span></div>
     <div class="buttons">
-        <button>C</button> 
-        <button>**</button>
-        <button>%</button>
-        <button>/</button>
+        <button onclick="press('C')">C</button> 
+        <button onclick="press('**')">^</button>
+        <button onclick="press('%')">%</button>
+        <button onclick="press('/')">/</button>
         <br>
-        <button>9</button>
-        <button>8</button>
-        <button>7</button>
-        <button>*</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('7')">7</button>
+        <button onclick="press('*')">*</button>
         <br>
-        <button>6</button> 
-        <button>5</button>
-        <button>4</button>
-        <button>+</button>
+        <button onclick="press('6')">6</button> 
+        <button onclick="press('5')">5</button>
+        <button onclick="press('4')">4</button>
+        <button onclick="press('+')">+</button>
         <br>
-        <button>3</button>
-        <button>2</button>
-        <button>1</button>
-        <button>-</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('1')">1</button>
+        <button onclick="press('-')">-</button>
         <br>
-        <button>DEL</button> 
-        <button>0</button>
-        <button>.</button>
-        <button>=</button>
+        <button onclick="press('DEL')">DEL</button> 
+        <button onclick="press('0')">0</button>
+        <button onclick="press('.')">.</button>
+        <button onclick="press('=')">=</button>
     </div>
     </div>
-</body>
-<footer>
-    <p>Web Calculator by Odusola Oluwasemilore</p>
-</footer>
-<script src="calc.js"></script>
-</div>
+    <footer>
+        <p>Web Calculator by Odusola Oluwasemilore</p>
+    </footer>
+    <script src="calc.js"></script>
 </body>
 </html>

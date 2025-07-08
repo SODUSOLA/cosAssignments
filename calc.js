@@ -1,33 +1,31 @@
-const display = document.getElementById("display");
-const buttons = document.querySelectorAll(".buttons button");
-
-let currentInput = ''
+let display = document.getElementById("display");
+let current = '';
 let result = '';
 
+function updateDisplay(value) {
+display.textContent = value;
+// scroll to the right end
+display.scrollLeft = display.scrollWidth;
+}
 
-buttons.forEach(button => {
-    button.addEventListener(
-        'click', () => {
-            const value = button.textContent;
-            if (value === 'C') {
-                currentInput = '';
-                result = '';
-                display.textContent = 0;
-            } else if (value === 'DEL'){
-                currentInput = currentInput.slice(0, -1)
-                display.textContent = currentInput || 0
-            } else if (value === '='){
-                try {
-                    result = eval(currentInput)
-                    display.textContent = result;
-                    currentInput = result.toString()
-                } catch {
-                    display.textContent = 'Error'
-                }
-            } else {
-                currentInput += value;
-                display.textContent = currentInput
-            }
-        }
-    )
-})
+function press(key) {
+if (key === 'C') {
+    current = '';
+    updateDisplay('0');
+} else if (key === 'DEL') {
+    current = current.slice(0, -1);
+    updateDisplay(current || '0');
+} else if (key === '=') {
+    try {
+        
+    result = eval(current);
+    updateDisplay(result);
+    current = result.toString();
+    } catch {
+    updateDisplay('Error');
+    }
+} else {
+    current += key;
+    updateDisplay(current);
+}
+}

@@ -9,19 +9,37 @@
     box-shadow: 0 0 10px rgba(81, 27, 27, 0.1);
     font-family: Arial, sans-serif;
     transition: transform 0.5s ease;
+    overflow: visible;
 }
 
 .calculator:hover {
     transform: scale(1.08);
 }
 
-#display {
-    height: 100px;
+    #display {
+    height: 110px;
     font-size: 25px;
-    text-align: right;
     padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    color: #171111;
+    font-weight: bold;
+    overflow-x: auto;
+    white-space: nowrap;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    text-align: left;
+    align-content: center;
+    }
+
+
+#display::-webkit-scrollbar {
+    height: 3px;
+}
+
+#display::-webkit-scrollbar-thumb {
+    background-color: #1b0707;
+    border-radius: 3px;
 }
 
 button {
@@ -65,3 +83,4 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
